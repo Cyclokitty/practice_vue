@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Practicing Vue.js</title>
+    <link href="practice.css" rel="stylesheet"/>
+  </head>
+  <body>
+
+    <div id="app">
+      <h1>{{ message }}</h1>
+    </div>
+
+    <!-- binding the title attribute up to dat with the message propery -->
+    <div id="app-2">
+      <span v-bind:title="message">Hover your mouse over me for a few seconds to see my dynamically bound title!</span>
+    </div>
+
+    <!-- conditionals and loops -->
+    <!-- <div id="app-3">
+      <p v-if="seen">Now you see me....</p>
+    </div> -->
+
+    <div id="app-3">
+      <p v-if="seen" v-on:click="removeText">{{ message }}</p>
+    </div>
+
+    <!-- v-for to display items from an array -->
+    <!-- <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">{{ todo.text }}</li>
+      </ol>
+    </div> -->
+
+    <!-- making use of the Vue component below -->
+    <div id="app-4">
+      <ol>
+        <todo-item v-for='item in todos' v-bind:todo='item' :key='item.id'></todo-item>
+      </ol>
+    </div>
+    <!-- handling user input -->
+
+    <!-- v-on directive to attach event listeners that invode methods -->
+    <div id="app-5">
+      <p>{{ message}}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <!-- v-model is two-way binding between form input and app state -->
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message">
+    </div>
+
+    <!-- using components -->
+    <div id="app-7">
+      <h4>Grocery List</h4>
+      <ol>
+        <todo-item v-for='item in groceryList' v-bind:todo='item' :key='item.id'></todo-item>
+      </ol>
+    </div>
+
+    <!-- Our script tags -->
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript" src="practice.js"></script>
+  </body>
+</html>

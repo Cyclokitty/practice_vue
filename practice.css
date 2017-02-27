@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+
+body {
+  font-family: 'Baloo', cursive;
+  padding: 25px;
+}
+
+#app {
+  color: #333;
+  font-size: 2em;
+  text-align: center;
+}
+
+#app-3 {
+  color: teal;
+}
